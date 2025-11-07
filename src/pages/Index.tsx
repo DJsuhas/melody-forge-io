@@ -9,19 +9,18 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background with image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background">
-          <img
-            src="/images/hero-reference.png"
-            alt=""
-            className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
-          />
+        {/* Pure CSS Background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1520] via-[#0d1f2d] to-[#071019]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent" />
         </div>
 
         {/* Animated glows */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-floatGlow" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-floatGlow" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[100px] animate-floatGlow" />
+          <div className="absolute bottom-1/3 right-1/4 w-[600px] h-[600px] bg-secondary/15 rounded-full blur-[120px] animate-floatGlow" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-floatGlow" style={{ animationDelay: "4s" }} />
         </div>
 
         {/* Content */}
@@ -86,23 +85,44 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Logo in top corner */}
-        <div className="absolute top-6 left-6 flex items-center gap-2 z-20">
-          <Music2 className="h-8 w-8 text-primary" />
-          <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Voice2Music
-          </span>
-        </div>
+        {/* Full Header Navigation */}
+        <header className="absolute top-0 left-0 right-0 z-50 border-b border-border/20 backdrop-blur-sm bg-background/30">
+          <nav className="container-custom flex h-20 items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Music2 className="h-8 w-8 text-primary" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Voice2Music
+              </span>
+            </div>
 
-        {/* Auth button in top right */}
-        <div className="absolute top-6 right-6 flex items-center gap-3 z-20">
-          <Button variant="ghost" onClick={() => navigate("/auth")}>
-            Login
-          </Button>
-          <Button className="glow-effect" onClick={() => navigate("/auth")}>
-            Sign Up
-          </Button>
-        </div>
+            <div className="hidden md:flex items-center gap-8">
+              <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Features
+              </button>
+              <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Pricing
+              </button>
+              <button 
+                onClick={() => navigate("/about")}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                About
+              </button>
+              <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Docs
+              </button>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <Button variant="ghost" size="sm" onClick={() => navigate("/auth")}>
+                Login
+              </Button>
+              <Button size="sm" className="glow-effect" onClick={() => navigate("/auth")}>
+                Sign Up
+              </Button>
+            </div>
+          </nav>
+        </header>
       </section>
     </div>
   );
