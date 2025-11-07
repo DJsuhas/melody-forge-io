@@ -32,10 +32,10 @@ const Index = () => {
           </div>
 
           <h1 className="hero-text max-w-5xl mx-auto animate-slideInLeft" style={{ animationDelay: "0.1s" }}>
-            The future of music is{" "}
+            Transform Your Voice Into{" "}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                human + AI
+                Beautiful Music
               </span>
               <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-secondary/20 blur-xl -z-10" />
             </span>

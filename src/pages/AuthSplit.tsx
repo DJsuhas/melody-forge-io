@@ -93,8 +93,17 @@ const AuthSplit = () => {
       <div className={`relative w-full max-w-5xl transition-all duration-500 ${isLogin ? "auth-active" : "auth-inactive"}`}>
         <div className="grid md:grid-cols-2 gap-0 glass rounded-3xl overflow-hidden shadow-2xl">
           {/* Login Panel */}
-          <div className={`p-8 md:p-12 transition-all duration-500 ${isLogin ? "opacity-100 translate-x-0" : "opacity-60 -translate-x-4"}`}>
-            <div className="space-y-6">
+          <div 
+            className={`p-8 md:p-12 transition-all duration-500 relative ${isLogin ? "opacity-100 translate-x-0" : "opacity-60 -translate-x-4"}`}
+            style={{
+              backgroundImage: "url('/images/auth-bg.avif')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70 backdrop-blur-sm" />
+            <div className="space-y-6 relative z-10">
               <div className="flex items-center gap-2 mb-8">
                 <Music2 className="h-8 w-8 text-primary" />
                 <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -181,8 +190,17 @@ const AuthSplit = () => {
           </div>
 
           {/* Signup Panel */}
-          <div className={`p-8 md:p-12 transition-all duration-500 bg-gradient-to-br from-primary/10 to-secondary/10 ${!isLogin ? "opacity-100 translate-x-0" : "opacity-60 translate-x-4"}`}>
-            <div className="space-y-6">
+          <div 
+            className={`p-8 md:p-12 transition-all duration-500 relative ${!isLogin ? "opacity-100 translate-x-0" : "opacity-60 translate-x-4"}`}
+            style={{
+              backgroundImage: "url('/images/auth-bg.avif')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-background/60 backdrop-blur-sm" />
+            <div className="space-y-6 relative z-10">
               <div>
                 <h2 className="text-3xl font-bold mb-2">Create account</h2>
                 <p className="text-muted-foreground">Start your musical journey today</p>
