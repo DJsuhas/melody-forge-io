@@ -80,10 +80,43 @@ export default {
             height: "0",
           },
         },
+        floatGlow: {
+          "0%, 100%": {
+            transform: "translateY(0) scale(1)",
+            opacity: "0.3",
+          },
+          "50%": {
+            transform: "translateY(-12px) scale(1.05)",
+            opacity: "0.5",
+          },
+        },
+        slideInLeft: {
+          from: {
+            opacity: "0",
+            transform: "translateX(-30px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+        slideInRight: {
+          from: {
+            opacity: "0",
+            transform: "translateX(30px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        floatGlow: "floatGlow 4s ease-in-out infinite",
+        slideInLeft: "slideInLeft 0.5s ease-out",
+        slideInRight: "slideInRight 0.5s ease-out",
       },
     },
   },
